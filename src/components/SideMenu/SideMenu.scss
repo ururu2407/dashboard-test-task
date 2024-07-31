@@ -1,0 +1,98 @@
+@import "../../scss/variables.scss";
+.side-menu {
+  min-width: 250px;
+  max-width: 250px;
+  box-shadow: 0px 10px 60px 0px rgba(226, 236, 249, 0.5);
+  background-color: $light-text-color;
+  //   height: 100vh;
+  padding: 36px 28px 76px;
+  height: calc(100vh - 112px);
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 1300px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: 0.3s ease-in-out;
+    &.open {
+      transform: translateX(0);
+    }
+  }
+  &__header {
+    display: flex;
+    gap: 8px;
+    &__text {
+      display: flex;
+      align-items: end;
+      gap: 4px;
+      p {
+        color: #838383;
+        font-size: 10px;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: -0.1px;
+        margin-bottom: 6px;
+      }
+    }
+  }
+  &__content {
+    margin-top: 52px;
+    .side-menu__nav {
+      &__list {
+        list-style: none;
+        display: grid;
+        gap: 18px;
+        width: 100%;
+        &__item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 11px 8px 11px 11px;
+          border-radius: 8px;
+          svg {
+            color: $side-menu-text-color;
+          }
+          &__text {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: $side-menu-text-color;
+          }
+          &.active {
+            background-color: $selected-background-color;
+            svg {
+              color: $light-text-color;
+            }
+            p {
+              color: $light-text-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__footer {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+    img {
+      width: 42px;
+      height: 42px;
+      border-radius: 42px;
+    }
+    p {
+      &.name {
+        color: $dark-text-color;
+        font-weight: 500;
+        letter-spacing: 0.14px;
+      }
+      &.role {
+        font-size: 12px;
+        color: #757575;
+        letter-spacing: 0.12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../scss/variables.scss";
+
+.pagination {
+  display: flex;
+  gap: 12px;
+  button {
+    padding: 0;
+    width: 26px;
+    height: 24px;
+    border-radius: 4px;
+    outline: none;
+    background-color: $pagination-background-color;
+    border: 1px solid $divider-color;
+    color: $pagination-text-color;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 100%; /* 12px */
+    cursor: pointer;
+    &.active {
+      background-color: $selected-background-color;
+      border: 1px solid $selected-background-color;
+      color: #fff;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+    &.ellipsis {
+      background: none;
+      border: none;
+      cursor: default;
+      width: fit-content;
+    }
+  }
+}

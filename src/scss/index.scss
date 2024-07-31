@@ -1,0 +1,33 @@
+@import "./_variables.scss";
+body {
+  color: $main-text-color;
+  font-family: "Poppins", sans-serif;
+  background: #fafbff;
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  color: $dark-text-color;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.26px;
+}
+h2 {
+  color: $dark-text-color;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+}
+p {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.14px;
+}
