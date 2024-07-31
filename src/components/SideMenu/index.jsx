@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   LogoIcon,
   KeySquareIcon,
@@ -13,6 +13,12 @@ import avatar from "../../assets/img/avatar.png";
 import "./SideMenu.scss";
 
 export const SideMenu = ({ isOpen }) => {
+  const [activeItem, setActiveItem] = useState("Customers");
+
+  const handleItemClick = (item) => {
+    setActiveItem(item);
+  };
+
   return (
     <div className={`side-menu ${isOpen ? "open" : ""}`}>
       <div className="side-menu__header">
@@ -25,41 +31,66 @@ export const SideMenu = ({ isOpen }) => {
       <div className="side-menu__content">
         <nav className="side-menu__nav">
           <ul className="side-menu__nav__list">
-            <li className="side-menu__nav__list__item">
+            <li className={"side-menu__nav__list__item"}>
               <div className="side-menu__nav__list__item__text">
                 <KeySquareIcon />
                 <p>Dashboard</p>
               </div>
             </li>
-            <li className="side-menu__nav__list__item">
+            <li
+              className={`side-menu__nav__list__item ${
+                activeItem === "Product" ? "active" : ""
+              }`}
+              onClick={() => handleItemClick("Product")}
+            >
               <div className="side-menu__nav__list__item__text">
                 <ThreeDSquareIcon />
                 <p>Product</p>
               </div>
               <ChevronRightIcon />
             </li>
-            <li className="side-menu__nav__list__item active">
+            <li
+              className={`side-menu__nav__list__item ${
+                activeItem === "Customers" ? "active" : ""
+              }`}
+              onClick={() => handleItemClick("Customers")}
+            >
               <div className="side-menu__nav__list__item__text">
                 <UserSquareIcon />
                 <p>Customers</p>
               </div>
               <ChevronRightIcon />
             </li>
-            <li className="side-menu__nav__list__item">
+            <li
+              className={`side-menu__nav__list__item ${
+                activeItem === "Income" ? "active" : ""
+              }`}
+              onClick={() => handleItemClick("Income")}
+            >
               <div className="side-menu__nav__list__item__text">
                 <WalletMoneyIcon />
                 <p>Income</p>
               </div>
               <ChevronRightIcon />
             </li>
-            <li className="side-menu__nav__list__item">
+            <li
+              className={`side-menu__nav__list__item ${
+                activeItem === "Promote" ? "active" : ""
+              }`}
+              onClick={() => handleItemClick("Promote")}
+            >
               <div className="side-menu__nav__list__item__text">
                 <DiscountShapeIcon />
                 <p>Promote</p>
               </div>
               <ChevronRightIcon />
             </li>
-            <li className="side-menu__nav__list__item">
+            <li
+              className={`side-menu__nav__list__item ${
+                activeItem === "Help" ? "active" : ""
+              }`}
+              onClick={() => handleItemClick("Help")}
+            >
               <div className="side-menu__nav__list__item__text">
                 <MessageQuestionIcon />
                 <p>Help</p>

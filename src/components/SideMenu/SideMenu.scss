@@ -51,6 +51,8 @@
           align-items: center;
           padding: 11px 8px 11px 11px;
           border-radius: 8px;
+          cursor: pointer;
+          transition: 0.3s ease;
           svg {
             color: $side-menu-text-color;
           }

@@ -17,6 +17,7 @@
     font-weight: 500;
     line-height: 100%; /* 12px */
     cursor: pointer;
+    transition: 0.3s ease;
     &.active {
       background-color: $selected-background-color;
       border: 1px solid $selected-background-color;
